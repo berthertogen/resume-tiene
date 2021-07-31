@@ -3,38 +3,30 @@
   "version": "1.0.0",
   "description": "resume Tiene Hertogen",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server --mode development"
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development"
   },
   "repository": {
     "type": "git",
-    "url": "https://softwaresolutionshertogen@dev.azure.com/softwaresolutionshertogen/ResumeTiene/_git/ResumeTiene"
+    "url": "https://github.com/berthertogen/resume-tiene"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^9.8.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^6.0.2",
-    "css-loader": "^3.5.3",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "file-loader": "^6.0.0",
-    "html-loader": "^1.1.0",
-    "html-webpack-plugin": "^4.3.0",
-    "postcss-loader": "^3.0.0",
-    "sass": "^1.26.8",
-    "sass-loader": "^8.0.2",
-    "style-loader": "^1.2.1",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.1.0",
+    "sass": "^1.37.0",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-brands-svg-icons": "^5.14.0",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "bootstrap": "^4.5.0",
-    "jquery": "^3.5.1",
-    "popper.js": "^1.16.1"
+    "bootstrap": "^5.0.2"
   }
 }

@@ -1,9 +1,16 @@
 @import "~bootstrap/scss/bootstrap-grid.scss"
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap")
 
 $red: #E72A4C
 $green: #057B7B
   
+/* raleway-regular - latin */
+@font-face 
+  font-family: 'Raleway'
+  font-style: normal
+  font-weight: 400
+  src: url('./assets/fonts/raleway-v22-latin-regular.eot') /* IE9 Compat Modes */
+  src: local(''), url('./assets/fonts/raleway-v22-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('./assets/fonts/raleway-v22-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */ url('./assets/fonts/raleway-v22-latin-regular.woff') format('woff'), /* Modern Browsers */ url('./assets/fonts/raleway-v22-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('./assets/fonts/raleway-v22-latin-regular.svg#Raleway') format('svg') /* Legacy iOS */
+
 html
   min-height: 100%
   margin: 0
@@ -95,7 +102,21 @@ html
         a
           font-size: 1.5em
           margin: 0.25em
-  
+      
+      .fas
+        height: 1em
+        width: 1em
+        background-repeat: no-repeat
+        display: flex
+      
+      .fas.fa-file-pdf
+        background-image: url('./assets/icons/file-pdf-solid.svg')
+      .fas.fa-file-word
+        background-image: url('./assets/icons/file-word-solid.svg')
+      .fas.fa-print
+        background-image: url('./assets/icons/print-solid.svg')
+
+
   
 @include media-breakpoint-up(md)
   html

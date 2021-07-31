@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: './src/index.js',
@@ -26,8 +26,8 @@ module.exports = {
         { from: 'src/assets/download', to: 'assets/download'},
       ]
     }),
-    new ExtractTextPlugin({
-      filename: "[name].[hash].css"
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css"
     })
   ],
   devServer: {
@@ -38,37 +38,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|svg|jpg|gif|webp)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-          }
-        }],
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          'file-loader',
-        ],
-      },
-      {
         test: /\.s[ac]ss$/i,
-        use: ExtractTextPlugin.extract({
-          use: [
-            'css-loader', {
-              loader: 'postcss-loader', // Run postcss actions
-              options: {
-                plugins: function () { // postcss plugins, can be exported to postcss.config.js
-                  return [
-                    require('autoprefixer')
-                  ];
-                }
-              }
+        use: [
+          "style-loader",
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false,
             },
-            'sass-loader',
-          ]
-        })
+          },
+          "css-loader",
+          "sass-loader",
+        ],
       },
       {
         test: /\.html$/,
