@@ -1,0 +1,26 @@
+trigger: 
+  - master
+
+stages:
+- stage: 'build' 
+  jobs:
+  - job: 'build'
+    pool: 
+      vmImage: 'ubuntu-latest'
+    steps:
+      - task: NodeTool@0
+        displayName: 'Get node'
+        inputs:
+          versionSpec: '12.x'
+      - script: npm ci
+        displayName: 'Install npm packages'
+      - script: 'npm run build'
+        displayName: 'Build'
+      - task: CopyFiles@2
+        displayName: 'Copy build output'
+        inputs:
+          contents: 'dist/**'
+          targetFolder: $(Build.ArtifactStagingDirectory)
+      - publish: $(Build.ArtifactStagingDirectory)
+        displayName: 'Publish artifact'
+        artifact: 'drop'

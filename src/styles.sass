@@ -1,0 +1,116 @@
+@import "~bootstrap/scss/bootstrap-grid.scss"
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap")
+
+$red: #E72A4C
+$green: #057B7B
+  
+html
+  min-height: 100%
+  margin: 0
+
+  body
+    font-family: 'Raleway', sans-serif
+    margin: 0 auto
+
+    a
+      color: $green
+      text-decoration: underline
+    p
+      margin: 0
+
+    h1
+      margin: 0
+      color: $blue
+      font-size: 2em
+
+    h2
+      margin: 0
+      color: $green
+      font-size: 1.75em
+
+    h3
+      margin: 0.5em 0
+      color: $red
+      font-size: 1em
+
+    .red
+      color: $red
+
+    .green
+      color: $green
+
+    .work-experience
+      p
+        margin-top:0.5em
+
+html
+  body
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    max-width: 800px
+
+    address
+      div
+        display: flex
+        svg
+          min-width: 30px
+          margin-top: 0.3em
+
+    section
+      padding: 1em
+      width: 100%
+
+    .profile
+      .title
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        h1
+          margin-bottom: 1em
+
+    .profile-image
+      display: flex
+      flex-direction: column
+      justify-items: center
+
+      .profile-picture
+        margin: auto
+        max-width: 200px
+        max-height: 200px
+        width: 50vw
+        height: 50vw
+        img
+          max-width: 200px
+          max-height: 200px
+          width: 50vw
+          height: 50vw
+          border-radius: 50%
+
+      .screen-only
+        display: flex
+        justify-content: center
+
+        a
+          font-size: 1.5em
+          margin: 0.25em
+  
+  
+@include media-breakpoint-up(md)
+  html
+    body
+      .profile,
+      .profile-image
+        width: 50%
+
+      .profile-image
+        .profile-picture
+          img
+            width: 30vw
+            height: 30vw
+
+  
+@media print
+  .screen-only
+    display: none
