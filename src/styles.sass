@@ -60,9 +60,10 @@ html
     address
       div
         display: flex
-        svg
-          min-width: 30px
-          margin-top: 0.3em
+
+        i
+          margin-top: 0.25em
+          margin-right: 0.5em
 
     section
       padding: 1em
@@ -103,19 +104,6 @@ html
           font-size: 1.5em
           margin: 0.25em
       
-      .fas
-        height: 1em
-        width: 1em
-        background-repeat: no-repeat
-        display: flex
-      
-      .fas.fa-file-pdf
-        background-image: url('./assets/icons/file-pdf-solid.svg')
-      .fas.fa-file-word
-        background-image: url('./assets/icons/file-word-solid.svg')
-      .fas.fa-print
-        background-image: url('./assets/icons/print-solid.svg')
-  
 @include media-breakpoint-up(md)
   html
     body
@@ -133,3 +121,26 @@ html
 @media print
   .screen-only
     display: none
+
+.fas
+  height: 1em
+  width: 1em
+  background-repeat: no-repeat
+  background-position: center
+  display: flex
+
+.fas.fa-file-pdf
+  background-image: url('./assets/icons/file-pdf-solid.svg')
+.fas.fa-file-word
+  background-image: url('./assets/icons/file-word-solid.svg')
+.fas.fa-print
+  background-image: url('./assets/icons/print-solid.svg')
+.fas.fa-envelope
+  background-image: url('./assets/icons/envelope-solid.svg')
+.fas.fa-mobile-alt
+  background-image: url('./assets/icons/mobile-alt-solid.svg')
+.fas.fa-map-marker-alt
+  background-image: url('./assets/icons/map-marker-alt-solid.svg')
+.fas.fa-linkedin
+  background-image: url('./assets/icons/linkedin-in-brands.svg')
+
